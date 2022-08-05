@@ -1,0 +1,46 @@
+//*-Bhavesh Mankar-*
+#include<bits/stdc++.h>
+using namespace std;
+
+//set
+/*
+The property of Uniqueness: Every element of a set in C++ must be unique, i.e., no duplicate values are allowed. Hence, we can say that sets in C++ do not favor redundancy.
+The property of being Sorted: The elements in a set container are automatically stored in a sorted manner.
+The property of being Immutable: You cannot change the values once they are stored in a set. Hence, insertion and deletion are allowed, but you cannot update or modify the existing elements of the set. 
+The property of Internal Implementation: The logical implementation of a set in C++ is done using a BST.
+
+//indexing is not provided unlike array
+
+begin() :- Returns an iterator to the first element of the set .
+end() :- Returns an iterator to the theoretical element that follows last element in the set .
+Empty() :- check wheather the set is empty or not .
+max_size() :-Returns the maximum number of element that set can hold .
+Size() :- Returns the number of elements in the set .
+*/
+int main() {
+    //empty set
+    set<int> set1 ;
+
+
+//greater first ie. decreasing order
+    set<int,greater<int>>set2;
+
+//with initialisation
+    set<int,greater<int>>set3 = {1,2,3,4} ;
+
+//copy of another set
+    set<int,greater<int>>set4(set3) ;
+
+    int arr[]={5,6,7,8} ;
+    set<int,greater<int>> set5(arr,arr+4) ;
+
+    //defining iterator
+    
+    set<int> ::iterator it ;
+
+    for(auto it = set5.begin();it!=set5.end();it++){
+        cout<<*it<<" ";
+        cout<<endl;
+    }
+    return 0 ;
+}
