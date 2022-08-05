@@ -1,0 +1,64 @@
+//clear()
+//empty()
+//count()
+//insert()
+//s.size()
+//s.max_size()
+
+
+//-*Bhavesh Mankar-*
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    set<int> s={10,20,30,40} ;
+    set<int>::iterator it ;
+    std::cout<<"First element : "<<*(s.begin()) <<endl;
+    std::cout<<"Last element : "<<*--(s.end()) <<endl;
+    
+    // Traversal of set ()
+    for (auto it = s.begin(); it!=s.end(); it++)
+    {
+        cout<<" "<<*it;
+    }
+    cout<<endl;
+
+    //to check whether set is empty or not
+    //s.empty()
+
+    if(s.empty())    
+    cout<<"Empty set";
+    else
+    cout<<"Not empty";
+
+    cout<<"\nSize of the set: "<<s.size();                 
+    
+    cout<<"\nMax Size: "<<s.max_size();              
+    
+    s.erase(s.begin());                    
+    s.erase(12);                            
+    cout<<"\nAfter removing the first element and the element 12: ";
+    for (auto it = s.begin(); it!=s.end(); it++)
+    {
+        cout<<" "<<*it;
+    }
+    cout<<endl;
+
+    if(s.count(20)==1){
+        cout<<"20 is present "<<endl;
+    }else{
+        cout<<"20 is not present"<<endl;
+    }
+
+    s.clear();
+    if(s.empty())    
+    cout<<"Empty set";
+    else
+    cout<<"Not empty";
+
+    return 0 ;
+
+
+}  
