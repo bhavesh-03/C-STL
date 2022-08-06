@@ -1,0 +1,65 @@
+//-*Bhavesh Mankar-*
+
+#include<bits/stdc++.h>
+using namespace std;
+
+
+//1)data can be faster accesed with the help of map
+//2)No duplication is present. Every key is unique in map
+
+//map uses key value pair . it is used in ascending order by default 
+
+//Set is used to store keys and map is used to store keyvalue pair
+int main() {
+       
+
+    map<string,int>student_map,student_map1;   // Declaration of Map
+
+    student_map ["Rahul"] = 87;  // Inserting elements
+
+    student_map ["Ved"] = 35;
+
+    student_map ["Indranil"] = 69;
+
+    student_map.insert({{"saksham",77},{"Mohit",52}}); //
+
+    map<string,int>::iterator itr;
+    
+    for(itr=student_map.begin(); itr!=student_map.end(); itr++)
+        {
+            cout<<(*itr).first<<" : "<<(*itr).second <<endl;//itr->first
+        }
+
+    //with auto iterator    
+    for(auto &x : student_map){
+        cout<<x.first<<" : "<<x.second<<endl;
+    }    
+
+    cout<<"size: "<<student_map.size()<<endl;
+    cout<<"Max size: "<<student_map.max_size()<<endl;
+    cout<<"Empty: "<<student_map.empty()<<endl;
+  
+    student_map.insert({{"himanshu",24},{"raj",34}});
+    
+    for(auto &x : student_map){
+        cout<<x.first<<" : "<<x.second<<endl;
+    }  
+
+    cout<<"erase element: "<<student_map.erase("saksham");
+
+    cout<<"After erasing saksham"<<endl;
+    for(auto &x : student_map){
+        cout<<x.first<<" : "<<x.second<<endl;
+    } 
+   
+    student_map1.swap(student_map);
+    for(auto &x : student_map1){
+        cout<<x.first<<" : "<<x.second<<endl;
+    }
+    cout<<"Studentmap after swap"<<endl;
+    for(auto &x : student_map){
+        cout<<x.first<<" : "<<x.second<<endl;
+    }
+    cout<<student_map.count("Indranil")<<endl;
+}
+  
